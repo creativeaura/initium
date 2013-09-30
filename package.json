@@ -1,0 +1,29 @@
+{
+  "name": "initium",
+  "version": "0.0.1",
+  "description": "Simple bootstrap for web projects.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/creativeaura/initium.git"
+  },
+  "keywords": [
+    "bootstrap",
+    "less",
+    "grunt"
+  ],
+  "author": "Gaurav Jassal",
+  "copyright": "2013",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/creativeaura/initium/issues"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-requirejs": "~0.4.1",
+    "matchdep": "~0.1.2"
+  }
+}
