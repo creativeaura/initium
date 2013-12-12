@@ -131,15 +131,7 @@ module.exports = function (grunt) {
     },
     jshint: {
       options: {
-        curly: true,
-        eqeqeq: true,
-        eqnull: true,
-        browser: true,
-        globals: {
-          jQuery: true,
-          module: true,
-          require: true
-        },
+        jshintrc: '.jshintrc',
         ignores: ['app/resources/**/*.js', 'app/js/plugins/**/*.js']
       },
       files: {
@@ -172,6 +164,23 @@ module.exports = function (grunt) {
         src: 'production',
         dest: '/path/to/destination/folder',
         exclusions: ['path/to/source/folder/**/.DS_Store', 'path/to/source/folder/**/Thumbs.db', 'dist/tmp']
+      }
+    },
+
+    /**
+     * Using grunt bump to increase the project version
+     * - grunt bump:patch
+     * - grunt bump:minor
+     * - grunt bump:major
+     * - grunt bump:build
+     */
+    bump: {
+      options: {
+        files: ['package.json', 'bower.json'],
+        updateConfigs: [],
+        commit: false,
+        createTag: false,
+        push: false
       }
     }
   });
