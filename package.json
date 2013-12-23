@@ -19,9 +19,8 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
-    "postinstall" : "node_modules/.bin/bower install"
+    "postinstall": "node_modules/.bin/bower install"
   },
-
   "devDependencies": {
     "grunt": "~0.4.1",
     "bower": "~1.2.6",
@@ -53,6 +52,7 @@
     "karma-opera-launcher": "~0.1.0",
     "karma-safari-launcher": "~0.1.1",
     "mocha": "~1.16.1",
-    "karma-mocha": "~0.1.1"
+    "karma-mocha": "~0.1.1",
+    "grunt-contrib-imagemin": "~0.4.0"
   }
 }

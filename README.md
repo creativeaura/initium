@@ -1,4 +1,4 @@
-initium
+initium 0.0.1
 =======
 
 This a project bootstrap for frontend developers to save their time they spend at the start of each project. The project gives you a well organized directory structure and various tasks to compile, test and build your project code for deployment.

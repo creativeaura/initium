@@ -13,9 +13,9 @@ module.exports = function (grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
-    /**
-     * Create dynamic banner
-     */
+    //
+    // Create dynamic banner
+    //
     info: {
       banner: '/*!\n' +
               ' * <%= pkg.name %>\n' +
@@ -27,9 +27,9 @@ module.exports = function (grunt) {
               ' */\n'
     },
 
-    /**
-     * Watch various task on file modification
-     */
+    //
+    // Watch various task on file modification
+    //
     watch: {
       less: {
         files:   ['app/css/less/**/*.less'],
@@ -58,9 +58,9 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Compile all less files to single css file
-     */
+    //
+    // Compile all less files to single css file
+    //
     less: {
       development: {
         options: {
@@ -81,9 +81,10 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Run local server for development with livereload
-     */
+    //
+    // Run local server for development with livereload
+    //
+
     connect: {
       development: {
         options: {
@@ -101,9 +102,10 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Compile all commonjs dependencies to single bundle file.
-     */
+    //
+    // Compile all commonjs dependencies to single bundle file.
+    //
+
     requirejs: {
       compile: {
         options: {
@@ -115,9 +117,10 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Comple all of your coffeescript file into javascript
-     */
+    //
+    // Comple all of your coffeescript file into javascript
+    //
+
     coffee: {
       files:            ['app/js/modules/**/*.coffee'],
       glob_to_multiple: {
@@ -154,6 +157,9 @@ module.exports = function (grunt) {
     usemin: {
       html: ['production/*.html']
     },
+
+    // Ftp task to deploy production to remote site
+    //
     ftp: {
       build: {
         auth: {
@@ -167,13 +173,13 @@ module.exports = function (grunt) {
       }
     },
 
-    /**
-     * Using grunt bump to increase the project version
-     * - grunt bump:patch
-     * - grunt bump:minor
-     * - grunt bump:major
-     * - grunt bump:build
-     */
+    //
+    // Using grunt bump to increase the project version
+    // - grunt bump:patch
+    // - grunt bump:minor
+    // - grunt bump:major
+    // - grunt bump:build
+    //
     bump: {
       options: {
         files: ['package.json', 'bower.json'],
@@ -183,9 +189,36 @@ module.exports = function (grunt) {
         push: false
       }
     },
+
+    // Task to run jasmine and mocha unit tests
+    // You can change various options in karma.conf.js
     karma: {
       unit: {
         configFile: 'karma.conf.js'
+      }
+    },
+
+   // Task to optimize (jpg, png and gif) images for productions
+
+    imagemin: {
+      production: {
+        files: [{
+          expand: true,
+          cwd: 'src/',
+          src: ['app/img/*.{png,jpg,gif}'],
+          dest: 'production/img/'
+        }]
+      }
+    },
+
+    clean: {
+      build: {
+        src: [
+          'production/css/less',
+          'production/js/modules',
+          'production/js/app.js',
+          'production/js/config.js'
+        ]
       }
     }
   });
@@ -195,7 +228,7 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default',    ['jshint', 'watch']);
-  grunt.registerTask('build',      ['less', 'coffee', 'copy:production', 'clean', 'usemin']);
+  grunt.registerTask('build',      ['less', 'coffee', 'copy:production', 'clean', 'usemin', 'imagemin']);
   grunt.registerTask('deploy',     ['less', 'coffee', 'copy:production', 'clean', 'usemin', 'ftp']);
   grunt.registerTask('server',     ['connect:development']);
   grunt.registerTask('production', ['connect:production']);
