@@ -182,6 +182,11 @@ module.exports = function (grunt) {
         createTag: false,
         push: false
       }
+    },
+    karma: {
+      unit: {
+        configFile: 'karma.conf.js'
+      }
     }
   });
 
@@ -194,5 +199,6 @@ module.exports = function (grunt) {
   grunt.registerTask('deploy',     ['less', 'coffee', 'copy:production', 'clean', 'usemin', 'ftp']);
   grunt.registerTask('server',     ['connect:development']);
   grunt.registerTask('production', ['connect:production']);
+  grunt.registerTask('test',       ['karma:unit']);
 
 };

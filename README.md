@@ -47,6 +47,16 @@ We have included jQuery for dom manipulation and RequireJS to organize your Java
 
 Please use JSHint for your JavaScript before you commit. You can use the Grunt-task `jshint` for this. It is also integrated in `grunt watch`.
 
+## Unit Testing
+
+We have included Karma as testing suite. Using karma you can run your jasmine and mocha on PhantomJS, Chomre, Safari, Firefox and IE real browsers.
+
+By Default we are using jasmine but that can be easily changed in karma.config.js. You can also also various browser you wat to test on.
+
+To run the test
+
+    grunt tests
+
 ## Browser support
 
 * Chrome
