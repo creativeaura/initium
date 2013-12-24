@@ -22,40 +22,51 @@
     <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-precomposed.png">
 
     <link rel="stylesheet" href="css/main.css">
+    <!-- build:js js/initium.js -->
     <script src="resources/vendor/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
   </head>
   <body>
     <div class="container">
-      <div class="page-header">
-        <h1 class="animated flipIn">Initium (Project Boilerplate)</h1>
+      <div class="page-header text-center">
+        <img src="img/logo.png" alt="Initium (Project Boilerplate)" class="animated fadeInDown logo"/>
         <p class="lead">Simple front-end boilerplate and workflows.</p>
-        <p>Boilerplater repository to kick start your web project without wasting
+        <p class="lead">Boilerplater repository to kick start your web project without wasting
            your valuable time. <strong>Initium</strong> contains all useful task from compiling, testing and deploying.</p>
       </div>
-      <h3>Available tools &amp; tasks</h3>
+      <h1>Available tools &amp; tasks</h1>
+      <ul class="nav nav-pills nav-stacked">
+        <li>Mobile First</li>
+        <li>GruntJS</li>
         <ul>
-          <li>Mobile First</li>
-          <li>Grunt.js</li>
-            <ul>
-              <li>Less</li>
-              <li>Require.js</li>
-              <li>CoffeeScript</li>
-              <li>Karma (Unit Test)</li>
-              <li>Deployment / FTP to server</li>
-              <li>Livereload</li>
-              <li>usemin</li>
-              <li>JSLint</li>
-            </ul>
-          <li>Twitter Bootstrap 3</li>
-          <li>HTML5 Boilerplate</li>
+          <li>Less</li>
           <li>Require.js</li>
-          <li>Less / CSS</li>
-          <li>CSS3 Mixins</li>
-          <li>Bower (Package Manager)</li>
-          <li>Wraith (screenshot comparison tool)</li>
+          <li>CoffeeScript</li>
+          <li>Karma (Unit Test)
+            <ul>
+              <li>Jasmine</li>
+              <li>Mocha</li>
+            </ul>
+          </li>
+          <li>Deployment / FTP to server</li>
+          <li>Livereload</li>
+          <li>usemin</li>
+          <li>JSLint</li>
+          <li>Google PageSpeed</li>
         </ul>
+        <li>Twitter Bootstrap 3</li>
+        <li>HTML5 Boilerplate</li>
+        <li>Require.js</li>
+        <li>Less / CSS</li>
+        <li>CSS3 Mixins
+          <ul>
+            <li>Animate.css</li>
+          </ul>
+        </li>
+        <li>Bower (Package Manager)</li>
+      </ul>
     </div>
-    <!-- build:js scripts/amd-app.js -->
+    <!-- build:js js/amd-app.js -->
     <script src="//localhost:35729/livereload.js"></script>
     <script data-main="js/config" src="resources/vendor/requirejs/require.js"></script>
     <!-- endbuild -->

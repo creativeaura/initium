@@ -28,6 +28,19 @@ module.exports = function (grunt) {
     },
 
     //
+    // Task concat files in header tag
+    uglify: {
+      my_target: {
+        options: {
+
+        },
+        files: {
+          'app/js/initium.js': ['app/resources/vendor/modernizr/modernizr.js']
+        }
+      }
+    },
+
+    //
     // Watch various task on file modification
     //
     watch: {
@@ -54,7 +67,11 @@ module.exports = function (grunt) {
       },
       scripts: {
         files:   ['app/js/**/*.js'],
-        tasks:   ['jshit']
+        tasks:   ['jshint']
+      },
+      test: {
+        files:   ['tests/unit/**/*.spec.js'],
+        tasks:   ['karma']
       }
     },
 
@@ -112,7 +129,7 @@ module.exports = function (grunt) {
           name:           'config',
           baseUrl:        'app/js',
           mainConfigFile: 'app/js/config.js',
-          out:            'app/js/bundle.js'
+          out:            'app/js/amd-app.js'
         }
       }
     },
@@ -148,16 +165,11 @@ module.exports = function (grunt) {
         ]
       }
     },
-    // clean: [
-    //   'production/less',
-    //   'production/scripts/plugins/**',
-    //   'production/scripts/app.js',
-    //   'production/scripts/config.js'
-    //   ],
     usemin: {
       html: ['production/*.html']
     },
 
+    //
     // Ftp task to deploy production to remote site
     //
     ftp: {
@@ -190,15 +202,19 @@ module.exports = function (grunt) {
       }
     },
 
+    //
     // Task to run jasmine and mocha unit tests
     // You can change various options in karma.conf.js
+    //
     karma: {
       unit: {
         configFile: 'karma.conf.js'
       }
     },
 
-   // Task to optimize (jpg, png and gif) images for productions
+    //
+    // Task to optimize (jpg, png and gif) images for productions
+    //
 
     imagemin: {
       production: {
@@ -211,6 +227,10 @@ module.exports = function (grunt) {
       }
     },
 
+    //
+    // Task to remove files and folder not require in production
+    // example less and coffeescript files
+    //
     clean: {
       build: {
         src: [
@@ -220,6 +240,32 @@ module.exports = function (grunt) {
           'production/js/config.js'
         ]
       }
+    },
+
+    //
+    // Grunt task to run Google PageSpeed Insights as part of CI
+    //
+    pagespeed: {
+      prod: {
+        options: {
+          url: 'http://127.0.0.1:9002',
+          locale: 'en_GB',
+          strategy: 'desktop',
+          threshold: 80
+        }
+      },
+      paths: {
+        options: {
+          paths: ['/404.html', 'about.html'],
+          locale: 'en_GB',
+          strategy: 'desktop',
+          threshold: 80
+        }
+      },
+      options: {
+        key: 'API_KEY',
+        url: 'https://developers.google.com'
+      }
     }
   });
 
@@ -228,8 +274,8 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default',    ['jshint', 'watch']);
-  grunt.registerTask('build',      ['less', 'coffee', 'copy:production', 'clean', 'usemin', 'imagemin']);
-  grunt.registerTask('deploy',     ['less', 'coffee', 'copy:production', 'clean', 'usemin', 'ftp']);
+  grunt.registerTask('build',      ['less', 'coffee', 'uglify', 'copy:production', 'clean', 'usemin', 'imagemin']);
+  grunt.registerTask('deploy',     ['less', 'coffee', 'uglify', 'copy:production', 'clean', 'usemin', 'ftp']);
   grunt.registerTask('server',     ['connect:development']);
   grunt.registerTask('production', ['connect:production']);
   grunt.registerTask('test',       ['karma:unit']);

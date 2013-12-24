@@ -1,7 +1,7 @@
-initium 0.0.1
-=======
+![initium](app/img/logo.png)
 
 [![Build Status](https://travis-ci.org/creativeaura/initium.png?branch=master)](https://travis-ci.org/creativeaura/initium)
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/creativeaura/initium/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
 This a project bootstrap for frontend developers to save their time they spend at the start of each project. The project gives you a well organized directory structure and various tasks to compile, test and build your project code for deployment.
 
@@ -9,12 +9,8 @@ This a project bootstrap for frontend developers to save their time they spend a
 
 You will need to install some stuff, if you haven't already:
 
-Majors:
 
 * Node.js
-
-Secondaries:
-
 * Node: npm
 * Bower
 
@@ -31,12 +27,23 @@ This will install all dependencies required for the project in one single comman
 
 ## Grunt
 
-The project is using GruntJS to automate alot of development task to save developer time. We have added some handle grunt tasks like
+The project is using `GruntJS` to automate alot of development task to save developer time. We have added some handle grunt tasks like
 
-- grunt watch      (This will compile your less/css, coffeescript on file save and reload your browser automatically. It will also run your tests and other tasks like jslint.
-- grunt server     (This will start a http server and server /app folder on port 9001)
-- grunt production (This will start a http server and server /production folder on port 9002)
-- grunt build      (This command will compile and copy all your production files to production folder. This will also remove all files you don't need for production like less, coffesscript files.)
+This command will watch for your changes to files compile your less/css, coffeescript on file save and reload your browser automatically. It will also run your tests and other tasks like jslint.
+
+    grunt watch
+
+This will start a http server and server /app folder on port 9001
+
+    grunt server
+
+This will start a http server and server /production folder on port 9002
+
+    grunt production
+    
+This command will compile and copy all your production files to production folder. This will also remove all files you don't need for production like less, coffesscript files.
+
+    grunt build
 
 
 ## CSS
