@@ -1,6 +1,6 @@
 {
   "name": "initium",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Simple bootstrap for web projects.",
   "repository": {
     "type": "git",
@@ -27,7 +27,7 @@
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-connect": "~0.5.0",
     "grunt-contrib-uglify": "~0.2.7",
-    "grunt-contrib-less": "~0.7.0",
+    "grunt-contrib-less": "~0.9.0",
     "grunt-contrib-requirejs": "~0.4.1",
     "matchdep": "~0.1.2",
     "grunt-contrib-coffee": "~0.7.0",
