@@ -1,5 +1,5 @@
 module.exports = function(karma) {
-  karma.configure({
+  karma.set({
     // base path, that will be used to resolve files and exclude
     basePath: '.',
 
