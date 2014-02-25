@@ -12,7 +12,7 @@ require.config({
     plugins: 'js/plugins',
 
     // Libraries.
-    jquery: '../resources/vendor/jquery/jquery',
+    jquery: '../resources/vendor/jquery/jquery'
 
   },
 

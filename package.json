@@ -46,14 +46,20 @@
     "karma-requirejs": "~0.2.1",
     "karma-coffee-preprocessor": "~0.1.1",
     "karma-phantomjs-launcher": "~0.1.1",
-    "karma": "~0.10.8",
+    "karma": "~0.10.9",
     "grunt-karma": "~0.6.2",
     "karma-ie-launcher": "~0.1.1",
     "karma-opera-launcher": "~0.1.0",
     "karma-safari-launcher": "~0.1.1",
-    "mocha": "~1.16.1",
-    "karma-mocha": "~0.1.1",
     "grunt-contrib-imagemin": "~0.4.0",
-    "grunt-pagespeed": "0.0.9"
+    "grunt-pagespeed": "0.0.9",
+    "sinon-chai": "~2.5.0",
+    "sinon": "~1.8.2",
+    "karma-mocha-reporter": "~0.2.2",
+    "mocha": "~1.17.1",
+    "karma-mocha": "~0.1.1",
+    "chai": "~1.9.0",
+    "karma-chai": "~0.1.0",
+    "karma-sinon-chai": "~0.1.4"
   }
 }
