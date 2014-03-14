@@ -18,7 +18,7 @@
     "url": "https://github.com/creativeaura/initium/issues"
   },
   "scripts": {
-    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS",
+    "test": "./node_modules/.bin/karma start --single-run --browsers PhantomJS --reporters progress",
     "postinstall": "node_modules/.bin/bower install"
   },
   "devDependencies": {
