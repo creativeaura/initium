@@ -30,7 +30,7 @@ module.exports = function (grunt) {
     //
     // Task concat files in header tag
     uglify: {
-      my_target: {
+      mytarget: {
         options: {
 
         },
