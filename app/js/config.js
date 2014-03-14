@@ -1,6 +1,3 @@
-/*global $, window, CanvasLoader, jQuery, alert, require */
-/*jslint browser:true, devel:true, unused:false */
-
 // Set the require.js configuration for your application.
 require.config({
 

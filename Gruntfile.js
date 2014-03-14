@@ -155,10 +155,10 @@ module.exports = function (grunt) {
     jshint: {
       options: {
         jshintrc: '.jshintrc',
-        ignores: ['app/resources/**/*.js', 'app/js/plugins/**/*.js']
+        ignores: ['app/resources/**/*.js', 'app/js/plugins/**/*.js', 'app/js/initium.js']
       },
       files: {
-        src: ['Gruntfile.js', 'app/**/*.js']
+        src: ['app/**/*.js']
       }
     },
     copy: {

@@ -1,9 +1,9 @@
 {
   "name": "initium",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/creativeaura/initium",
   "authors": [
-    "Gaurav Jassal <gauravjassal@gmail.com>"
+    "Gaurav Jassal <gaurav@jassal.me>"
   ],
   "license": "MIT",
   "ignore": [

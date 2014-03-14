@@ -1,6 +1,6 @@
 {
   "name": "initium",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Simple bootstrap for web projects.",
   "repository": {
     "type": "git",
@@ -12,7 +12,7 @@
     "grunt"
   ],
   "author": "Gaurav Jassal",
-  "copyright": "2013",
+  "copyright": "2014",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/creativeaura/initium/issues"
