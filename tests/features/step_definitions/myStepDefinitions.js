@@ -22,6 +22,23 @@ var myStepDefinitionsWrapper = function() {
     }
 
   });
+
+  this.Given(/^I am on the home page$/, function (callback) {
+    this.visit('/', callback);
+  });
+
+  this.When(/^I visit "([^"]*)" page$/, function (arg1, callback) {
+    this.visit('/' + arg1, callback);
+  });
+
+  this.Then(/^I should see "([^"]*)" in the list of available tools$/, function (arg1, callback) {
+    var list = this.browser.text('#tools');
+    if(list.indexOf(arg1) !== -1) {
+      callback();
+    } else {
+      callback.fail(new Error("Can't find " + arg1 + " in the available tools"));
+    }
+  });
 };
 
 module.exports = myStepDefinitionsWrapper;

@@ -40,7 +40,7 @@ This will start a http server and server /app folder on port 9001
 This will start a http server and server /production folder on port 9002
 
     grunt production
-    
+
 This command will compile and copy all your production files to production folder. This will also remove all files you don't need for production like less, coffesscript files.
 
     grunt build
@@ -65,6 +65,18 @@ By Default we are using jasmine but that can be easily changed in karma.config.j
 To run the test
 
     grunt tests
+
+## BDD (Behaviour-Driven Development tool)
+
+Cucumber lets software development teams describe how software should behave in plain text. The text is written in a business-readable domain-specific language and serves as documentation, automated tests and development-aid - all rolled into one format.
+
+Install cucumber.js globally
+
+    npm install cucumber.js -g
+    cd tests
+    cucumber.js features/myFeature.feature --require features/step_definitions/myStepDefinitions.js
+
+We have included a sample test feature in this repo.
 
 ## Browser support
 
