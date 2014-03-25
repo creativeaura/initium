@@ -1,4 +1,4 @@
-define(['jquery'], function($) {
+define(['jquery', 'marionette'], function($) {
   'use strict';
 
   var App = {};
