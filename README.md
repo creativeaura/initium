@@ -23,6 +23,31 @@ Afterwards please run in your project directory.
 
 	$ npm install
 
+## Available Tools
+
+- Mobile First
+- GruntJS
+	- Less
+	- Require.js
+	- CoffeeScript
+	- Karma (Unit Test)
+	- Jasmine
+	- Mocha
+	- Deployment / FTP to server
+	- Livereload
+	- usemin
+	- JSLint
+	- Google PageSpeed
+- BDD (Behaviour-Driven Development tool)
+	- cucumber-js
+- Twitter Bootstrap 3
+- HTML5 Boilerplate
+- Require.js
+- Less / CSS
+- CSS3 Mixins
+	- Animate.css
+- Bower (Package Manager)
+
 This will install all dependencies required for the project in one single command.
 
 ## Grunt
