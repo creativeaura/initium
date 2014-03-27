@@ -9,7 +9,7 @@ require.config({
     plugins: 'js/plugins',
 
     // Libraries.
-    'jquery': '../resources/vendor/jquery/jquery',
+    'jquery': '../resources/vendor/jquery/dist/jquery',
     'handlebars': '../resources/vendor/handlebars/handlebars',
     'backbone': '../resources/vendor/backbone-amd/backbone',
     'underscore': '../resources/vendor/underscore-amd/underscore',

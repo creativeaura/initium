@@ -16,7 +16,6 @@
   "dependencies": {
     "modernizr": "~2.6.2",
     "requirejs": "~2.1.8",
-    "jquery": "~2.0.3",
     "animate.css": "~2.1.0",
     "backbone-amd": "~1.1.0",
     "underscore-amd": "~1.5.2",
