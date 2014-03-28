@@ -9,6 +9,9 @@
 
 module.exports = function (grunt) {
   'use strict';
+
+  require('time-grunt')(grunt);
+
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -30,12 +33,14 @@ module.exports = function (grunt) {
     //
     // Task concat files in header tag
     uglify: {
-      mytarget: {
+      polyfills: {
         options: {
 
         },
         files: {
-          'app/js/initium.js': ['app/resources/vendor/modernizr/modernizr.js']
+          'app/js/initium.js': [
+            'app/resources/vendor/modernizr/modernizr.js'
+          ]
         }
       }
     },
@@ -277,8 +282,8 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default',    ['jshint', 'watch']);
-  grunt.registerTask('build',      ['less', 'coffee', 'uglify', 'copy:production', 'clean', 'usemin', 'imagemin']);
-  grunt.registerTask('deploy',     ['less', 'coffee', 'uglify', 'copy:production', 'clean', 'usemin', 'ftp']);
+  grunt.registerTask('build',      ['less:production', 'coffee', 'requirejs', 'uglify', 'copy:production', 'clean', 'usemin', 'imagemin']);
+  grunt.registerTask('deploy',     ['less:production', 'coffee', 'uglify', 'copy:production', 'clean', 'usemin', 'ftp']);
   grunt.registerTask('server',     ['connect:development']);
   grunt.registerTask('production', ['connect:production']);
   grunt.registerTask('test',       ['karma:unit']);

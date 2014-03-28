@@ -11,8 +11,8 @@ require.config({
     // Libraries.
     'jquery': '../resources/vendor/jquery/dist/jquery',
     'handlebars': '../resources/vendor/handlebars/handlebars',
-    'backbone': '../resources/vendor/backbone-amd/backbone',
-    'underscore': '../resources/vendor/underscore-amd/underscore',
+    'backbone': '../resources/vendor/backbone/backbone',
+    'underscore': '../resources/vendor/underscore/underscore',
     'marionette': '../resources/vendor/marionette/lib/backbone.marionette',
     'backbone-babysitter': '../resources/vendor/backbone-babysitter/lib/backbone-babysitter',
     'backbone-wreqr': '../resources/vendor/backbone-wreqr/lib/backbone-wreqr'
@@ -20,8 +20,7 @@ require.config({
 
   shim: {
     backbone: {
-      deps: ['underscore', 'jquery'],
-      exports: 'Backbone'
+      deps: ['underscore', 'jquery']
     },
     'marionette': {
       deps: ['backbone']
