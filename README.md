@@ -38,6 +38,7 @@ Afterwards please run in your project directory.
 	- usemin
 	- JSLint
 	- Google PageSpeed
+	- grunt-uncss
 - BDD (Behaviour-Driven Development tool)
 	- cucumber-js
 - Twitter Bootstrap 3
