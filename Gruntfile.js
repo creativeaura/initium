@@ -274,6 +274,17 @@ module.exports = function (grunt) {
         key: 'API_KEY',
         url: 'https://developers.google.com'
       }
+    },
+
+    // Optional task to clean unused css
+    uncss: {
+      dist: {
+        src: ['app/404.html', 'app/index.html'],
+        dest: 'app/css/production.css',
+        options: {
+          report: 'min' // optional: include to report savings
+        }
+      }
     }
   });
 
@@ -282,8 +293,8 @@ module.exports = function (grunt) {
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
   grunt.registerTask('default',    ['jshint', 'watch']);
-  grunt.registerTask('build',      ['less:production', 'coffee', 'requirejs', 'uglify', 'copy:production', 'clean', 'usemin', 'imagemin']);
-  grunt.registerTask('deploy',     ['less:production', 'coffee', 'uglify', 'copy:production', 'clean', 'usemin', 'ftp']);
+  grunt.registerTask('build',      ['less:production', 'uncss', 'coffee', 'requirejs', 'uglify', 'copy:production', 'clean', 'usemin', 'imagemin']);
+  grunt.registerTask('deploy',     ['ftp']);
   grunt.registerTask('server',     ['connect:development']);
   grunt.registerTask('production', ['connect:production']);
   grunt.registerTask('test',       ['karma:unit']);
